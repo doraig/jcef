@@ -53,6 +53,7 @@ before_build:
   - SET PATH=%JAVA_HOME%;%PATH%
   - echo "Running cmake..."
   - cd c:\projects\java-org.cef\src
+  - dir
   - gpg --import jcef_pub.asc
   - mkdir jcef_build
   - cd jcef_build
