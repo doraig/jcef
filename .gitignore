@@ -56,4 +56,4 @@ Thumbs.db
 /tools/buildtools/mac/clang-format
 /tools/buildtools/win/clang-format.exe
 /target
-/.idea
+/.idea/**
