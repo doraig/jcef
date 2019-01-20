@@ -66,5 +66,5 @@ cache:
   - C:\Users\appveyor\.m2
 
 artifacts:
-  - path: target\jorg.cef-%buildType%-distribution.zip
+  - path: target\jcef-%buildType%-distribution.zip
     name: jcef-%buildType%-distribution
