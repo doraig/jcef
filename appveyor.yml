@@ -59,7 +59,7 @@ after_build:
   - cd c:\projects\java-org.cef\src
   - mvn clean package --batch-mode -DskipTest -Dgpg.skip
   - mvn clean install --batch-mode -Dgpg.skip
-  - cd  c:\projects\java-cef\src\target
+  - cd  c:\projects\java-org.cef\src\target
   - 7z a jcef-%buildType%-distribution.zip ./*.jar
 cache:
   - C:\maven\
