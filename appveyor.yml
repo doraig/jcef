@@ -6,7 +6,11 @@
 
 os: Visual Studio 2015
 install:
-  - cmd: choco install gpg4win
+  - ps: |
+        $path = [Environment]::GetEnvironmentVariable("path", "machine")
+        $newPath = ($path.Split(';') | Where-Object { $_ -eq 'C:\ProgramData\chocolatey\bin' }) -join ';'
+        [Environment]::SetEnvironmentVariable("path", $newPath, "machine")
+  - ps: choco install gpg4win
   - ps: |
       Add-Type -AssemblyName System.IO.Compression.FileSystem
       if (!(Test-Path -Path "C:\maven" )) {
