@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings
+        xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+    <pluginGroups/>
+    <servers>
+        <server>
+            <username>doraig</username>
+            <password>${env.ossPwd}</password>
+            <id>ossgd</id>
+        </server>
+    </servers>
+    <mirrors/>
+    <profiles>
+        <profile>
+            <id>releasex64</id>
+            <properties>
+                <gpg.passphrase>${env.signPass}</gpg.passphrase>
+            </properties>
+        </profile>
+        <profile>
+            <id>releasex86</id>
+            <properties>
+                <gpg.passphrase>${env.signPass}</gpg.passphrase>
+            </properties>
+        </profile>
+    </profiles>
+</settings>

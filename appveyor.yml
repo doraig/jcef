@@ -34,6 +34,10 @@ configuration:
   - Release
 
 environment:
+  ossPwd:
+    secure: g90ya8rA84WyCOFFnwL243jCZ9IKwc457ExCLisBlSM=
+  signPass:
+    secure: mxLJ4To1jj3AgH5fAcKk/w==
   matrix:
   - buildType: releasex86
     generatorName: Visual Studio 14
