@@ -57,8 +57,8 @@ before_build:
 after_build:
   - echo "Build Maven distribution..."
   - cd c:\projects\java-org.cef\src
-  - mvn clean package --batch-mode -DskipTest
-  - mvn clean install --batch-mode
+  - mvn clean package --batch-mode -DskipTest -Dgpg.skip
+  - mvn clean install --batch-mode -Dgpg.skip
   - cd  c:\projects\java-cef\src\target
   - 7z a jcef-%buildType%-distribution.zip ./*.jar
 cache:
