@@ -1,5 +1,4 @@
 %echo Generating OpenPGP key
-%echo %signPass
 Key-Type: RSA
 Key-Length: 2048
 Name-Real: dorairg
