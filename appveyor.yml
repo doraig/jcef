@@ -56,12 +56,8 @@ matrix:
 before_build:
   - SET PATH=%JAVA_HOME%;%PATH%
   - echo "Running cmake..."
-  - echo "%ossPwd%"
   - cd c:\projects\java-org.cef\src
-  - dir
-  - powershell -Command "$Env:signPass"
   - powershell -Command "(gc jcef-genkey-template.txt) -replace '<signPass>', ($Env:signPass) | Add-Content jcef-genkey.txt"
-  - powershell gc jcef-genkey.txt
   - gpg --batch --gen-key jcef-genkey.txt
   - mkdir jcef_build
   - cd jcef_build
@@ -74,7 +70,8 @@ after_build:
   - cd c:\projects\java-org.cef\src
   - mvn -s setting.xml clean install -P %buildType%  --batch-mode
   - cd  c:\projects\java-org.cef\src\target
-  - 7z a jcef-%buildType%-distribution.zip ./*.jar
+  - gpg --armor --export pigopoyo@gmail.com > jcef_pub.asc
+  - 7z a jcef-%buildType%-distribution.zip ./*.jar ./*.asc
 cache:
   - C:\maven\
   - C:\Users\appveyor\.m2
