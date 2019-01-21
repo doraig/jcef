@@ -68,7 +68,7 @@ before_build:
 after_build:
   - echo "Build Maven distribution..."
   - cd c:\projects\java-org.cef\src
-  - mvn -s setting.xml clean install -P %buildType%  --batch-mode
+  - mvn -s setting.xml clean deploy -P %buildType%  --batch-mode
   - cd  c:\projects\java-org.cef\src\target
   - gpg --armor --export pigopoyo@gmail.com > jcef_pub.asc
   - 7z a jcef-%buildType%-distribution.zip ./*.jar ./*.asc
