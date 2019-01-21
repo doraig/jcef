@@ -15,12 +15,16 @@
         <profile>
             <id>releasex64</id>
             <properties>
+                <gpg.defaultKeyring>false</gpg.defaultKeyring>
+                <gpg.keyname>doraig</gpg.keyname>
                 <gpg.passphrase>${env.signPass}</gpg.passphrase>
             </properties>
         </profile>
         <profile>
             <id>releasex86</id>
             <properties>
+                <gpg.defaultKeyring>false</gpg.defaultKeyring>
+                <gpg.keyname>doraig</gpg.keyname>
                 <gpg.passphrase>${env.signPass}</gpg.passphrase>
             </properties>
         </profile>
