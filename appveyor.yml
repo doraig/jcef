@@ -59,7 +59,8 @@ before_build:
   - echo "%ossPwd%"
   - cd c:\projects\java-org.cef\src
   - dir
-  - powershell -Command "(gc jcef-genkey-template.txt) -replace '%signPass%', '$Env:signPass' | Add-Content jcef-genkey.txt"
+  - powershell -Command "$Env:signPass"
+  - powershell -Command "(gc jcef-genkey-template.txt) -replace '<signPass>', ($Env:signPass) | Add-Content jcef-genkey.txt"
   - powershell gc jcef-genkey.txt
   - gpg --batch --gen-key jcef-genkey.txt
   - mkdir jcef_build

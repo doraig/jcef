@@ -5,6 +5,6 @@ Name-Real: doraig
 Name-Comment: Sign key for JCEF jar.
 Name-Email: pigopoyo@gmail.com
 Expire-Date: 3y
-Passphrase: %signPass%
+Passphrase: <signPass>
 %commit
 %echo done
