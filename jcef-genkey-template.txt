@@ -1,0 +1,11 @@
+%echo Generating OpenPGP key
+%echo %signPass
+Key-Type: RSA
+Key-Length: 2048
+Name-Real: dorairg
+Name-Comment: Sign key for JCEF jar.
+Name-Email: pigopoyo@gmail.com
+Expire-Date: 3y
+Passphrase: %signPass%
+%commit
+%echo done
