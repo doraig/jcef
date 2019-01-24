@@ -233,6 +233,21 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.6</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
                 <version>3.1.0</version>
                 <executions>
@@ -243,11 +258,10 @@
                             <goal>copy-resources</goal>
                         </goals>
                         <configuration>
-                            <outputDirectory>src/main/resources</outputDirectory>
+                            <outputDirectory>src/main/resources/lib</outputDirectory>
                             <resources>
                                 <resource>
                                     <directory>${basedir}/jcef_build/native/Release</directory>
-                                    <filtering>true</filtering>
                                 </resource>
                             </resources>
                         </configuration>
@@ -256,15 +270,19 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-gpg-plugin</artifactId>
-                <version>1.6</version>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.7</version>
                 <executions>
                     <execution>
-                        <id>sign-artifacts</id>
-                        <phase>verify</phase>
+                        <phase>install</phase>
                         <goals>
-                            <goal>sign</goal>
+                            <goal>run</goal>
                         </goals>
+                        <configuration>
+                            <tasks>
+                                <delete dir="${project.basedir}/src/main/resources/lib"/>
+                            </tasks>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
