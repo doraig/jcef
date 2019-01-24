@@ -4,6 +4,7 @@
 
 package org.cef;
 
+import com.github.doraig.NativeLoader;
 import org.cef.callback.CefSchemeHandlerFactory;
 import org.cef.handler.CefAppHandler;
 import org.cef.handler.CefAppHandlerAdapter;
@@ -132,6 +133,11 @@ public class CefApp extends CefAppHandlerAdapter {
      */
     private CefApp(String[] args, CefSettings settings) throws UnsatisfiedLinkError {
         super(args);
+        try {
+            NativeLoader.loadLibrary();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
         if (settings != null) settings_ = settings.clone();
         if (OS.isWindows()) {
             System.loadLibrary("jawt");
