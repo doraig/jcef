@@ -69,7 +69,7 @@
         <profile>
             <id>releasex86</id>
             <properties>
-                <project.version>78.0-win32</project.version>
+                <project.version>78.1-win32</project.version>
             </properties>
             <dependencies>
                 <dependency>
@@ -92,7 +92,7 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <project.version>78.0-win64</project.version>
+                <project.version>78.1-win64</project.version>
             </properties>
             <dependencies>
                 <dependency>
@@ -112,7 +112,7 @@
         <profile>
             <id>releaseMac</id>
             <properties>
-                <project.version>78.0-mac</project.version>
+                <project.version>78.1-mac</project.version>
             </properties>
             <build>
                 <plugins>
@@ -150,7 +150,7 @@
         <profile>
             <id>releaseLinux</id>
             <properties>
-                <project.version>78.0-linux64</project.version>
+                <project.version>78.1-linux64</project.version>
             </properties>
             <dependencies>
                 <dependency>
